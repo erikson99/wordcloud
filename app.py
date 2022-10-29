@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
-import pandas as pd
-from PySripts.pandas_implementation import *
-from PySripts.df_text import *
+#import pandas as pd
+#from PySripts.pandas_implementation import *
+#from PySripts.df_text import *
 from PySripts.wordcloud_generator import *
 from pathlib import Path
 

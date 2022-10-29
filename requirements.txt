@@ -8,6 +8,8 @@ itsdangerous==1.1.0
 Jinja2==2.11.2
 kiwisolver==1.2.0
 MarkupSafe==1.1.1
+matplotlib==3.3.1
+numpy==1.19.1
 Pillow==7.2.0
 pyparsing==2.4.7
 python-dateutil==2.8.1
@@ -15,4 +17,4 @@ pytz==2020.1
 regex==2020.7.14
 six==1.15.0
 Werkzeug==1.0.1
-wordcloud==1.8.0
+wordcloud==1.8.2

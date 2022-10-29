@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="./static/css/style.css">
+{% endblock %}
+
+{% block title %} Wordcloud Generator {% endblock %}
+
+{% block content %}
+		{% if plot %}
+			<div class="container col-md-6">
+				<div class="alert alert-success" role="alert">
+					Your file has been uploaded successfully
+				</div>
+				<hr>
+				<h2>Wordcloud:</h2><br>
+				<img src="{{url}}">
+				<hr>
+				<button type="button" class="btn btn-danger" onclick="window.location.href='{{ url_for( 'index') }}'">Back</button>
+			</div>
+
+		{% else %}
+			<div class="container col-md-6">
+				{% if no_element_error %}
+					<div class="alert alert-warning" role="alert">
+						There are no messages in the selected time period. 
+					</div>
+				{% endif %}
+
+				<h3> Text File: </h3>
+				<form action = "/" method = "POST" enctype = "multipart/form-data">
+					<input class="btn btn-light" type = "file" name = "file" />
+					<br>
+					<br>
+					<h3> Image File: </h3>
+					<!-- <form action="/" method="POST" enctype="multipart/form-data"> -->
+					<input class="btn btn-light" type="file" name="file2" />
+					<br>
+					<br>
+					<div>
+						<form>
+						<button type="submit" class="btn btn-primary">Generate</button>
+						</form>
+					</div>
+				</form>
+			</div>
+		{% endif %}
+{% endblock %}

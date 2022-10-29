@@ -21,13 +21,6 @@ def upload_file():
 		f2 = request.files['file2']
 		# decodes utf-8 into a python string 
 		decoded = f.read().decode('utf-8')
-
-		# Converts the string into a Pandas DataFrame
-		# Data_extracted = get_DataFrame(decoded)
-
-		# Returns a Warning if the DataFrame is empty, given all input conditions 
-		# if(len(Data_extracted)==0):
-		# 	return render_template("index.html", no_element_error=1)
 		
 		# Gets a string of all chats from the DataFrame and using that string to create a
 		# wordcloud image and show it on index.hmtl
@@ -47,6 +40,3 @@ def add_header(response):
 	response.headers['Cache-Control'] = 'public, max-age=0'
 	return response
 
-
-if __name__ == '__main__':
-	app.run(debug=True)
